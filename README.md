@@ -4,12 +4,12 @@ App created to follow the cases about Covid-19 Pandemic and I can improve my ski
 
 ### URL
 
-https://fennawake.github.io/covid-app-js/
+**url:** https://fennawake.github.io/covid-app-js/
 
 
 ### API
 
-https://fennawake.github.io/covid-app-js/
+**url:** https://corona.lmao.ninja/v2/all
 
 
 ### SKILLS

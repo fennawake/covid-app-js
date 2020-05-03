@@ -83,7 +83,7 @@ async function getCountries(API_URL_COUNTRY) {
     const response = await fetch(API_URL_COUNTRY)
     const data = await response.json()
 
-    const total = document.getElementById('total')
+    const total = document.getElementById('searchCountry')
     const _p = document.createElement('p')
     total.appendChild(_p).innerHTML = data.length + " coutries affecteds"
 
@@ -105,7 +105,6 @@ async function getCountries(API_URL_COUNTRY) {
             temp += "</tr>"
         })
         document.getElementById('data-body').innerHTML = temp;
-
         $("#data").tablesorter();
     }
 }

@@ -1,272 +1,249 @@
-body {
-    font-family: 'Montserrat', sans-serif;
-}
-
-header {
-    display: flex;
-    flex-flow: row wrap;
-    align-items: center;
-    justify-content: space-evenly;
-}
-
-header,
-#logo-covid,
-#logo,
-#panel {
-    border: 0px solid red;
-}
-
-h1 {
-    text-align: center;
-    color: #25282b;
-    font-size: 60px;
-    font-family: 'Montserrat', sans-serif;
-    letter-spacing: 0.1px;
-    margin: 0;
-    text-align: center;
-}
-
-h3 {
-    text-align: center;
-    color: #25282b;
-    font-size: 26px;
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 300;
-    letter-spacing: 1.1px;
-    margin: 0;
-    margin: 0;
-    text-align: center;
-}
-
-#container {
-    width: 100%;
-    max-width: 980px;
-    margin: 0 auto;
-    border: 0px solid red;
-}
-
-
-/*
-    PANEL MAIN
-*/
-
-#panel {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 20px;
-    margin-top: 50px;
-}
-
-#cases,
-#deaths,
-#recovered {
-    padding: 40px 10px;
-    text-align: center;
-    border-radius: 6px;
-    box-shadow: 0 0 10px -4px #000;
-    position: relative;
-}
-
-#cases:hover,
-#deaths:hover,
-#recovered:hover {
-    transform: scale(1.1);
-}
-
-#cases img,
-#deaths img,
-#recovered img {
-    width: 64px;
-    height: 64px;
-}
-
-@keyframes slide {
-    0% {
-        transform: translateY(0);
-    }
-    50% {
-        transform: translateY(-30px);
-    }
-    100% {
-        transform: translateY(0px);
-    }
-}
-
-#cases:hover img,
-#deaths:hover img,
-#recovered:hover img {
-    animation-name: slide;
-    animation-duration: 2s;
-    animation-timing-function: ease-in-out;
-    animation-iteration-count: infinite;
-}
-
-#cases {
-    border: 1px solid #3858c2;
-    background-color: #4972fa;
-}
-
-#deaths {
-    border: 1px solid #c2383f;
-    background-color: #f0353f;
-}
-
-#recovered {
-    border: 1px solid #54c238;
-    background-color: #7fd869;
-}
-
-#cases img,
-#deaths img,
-#recovered img {
-    margin-bottom: 20px;
-}
-
-#cases span,
-#deaths span,
-#recovered span {
-    font-size: 40px;
-    font-family: 'Roboto', sans-serif;
-    color: #FFFFFF;
-    display: block;
-}
-
-#cases span.total-cases-today,
-#deaths span.total-deaths-today,
-#recovered span.total-active {
-    font-size: 30px;
-    font-family: 'Roboto', sans-serif;
-    color: #FFFFFF;
-}
-
-#cases h3,
-#deaths h3,
-#recovered h3 {
-    font-size: 16px;
-    font-family: 'Montserrat', sans-serif;
-    font-weight: bold;
-    color: #FFFFFF;
-    width: 100%;
-    margin-bottom: 30px;
-}
-
-#cases h4,
-#deaths h4,
-#recovered h4 {
-    font-size: 13px;
-    font-family: 'Montserrat', sans-serif;
-    font-weight: bold;
-    color: #FFFFFF;
-    width: 100%;
-    margin: 0;
-}
-
-
-/*
-    PANEL AUXILIAR
-*/
-
-#panel-aux {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 50px;
-    margin: 30px 0;
-}
-
-#actives,
-#critical {
-    padding: 20px 10px;
-    text-align: center;
-    border-radius: 6px;
-    box-shadow: 0 0 10px -4px #000;
-    position: relative;
-    border: 1px solid #e48303;
-    background-color: #f57710;
-}
-
-#actives img,
-#critical img {
-    margin-bottom: 20px;
-}
-
-#actives span,
-#critical span {
-    font-size: 40px;
-    font-family: 'Roboto', sans-serif;
-    color: #FFFFFF;
-    display: block;
-}
-
-#actives h3,
-#critical h3 {
-    font-size: 16px;
-    font-family: 'Montserrat', sans-serif;
-    font-weight: bold;
-    color: #FFFFFF;
-    width: 100%;
-}
-
-
-/*
-    TABLE
-*/
-
-#table .filter {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 30px;
-}
-
-#table-data {
-    overflow-x: auto;
-}
-
-#total p {
-    text-align: right;
-    margin: 0 5px 4px 0px;
-    font-size: 11px;
-    font-weight: bold;
-}
-
-table {
-    font-size: 13px;
-    font-family: 'Montserrat', sans-serif;
-    width: 100%;
-    border-collapse: collapse;
-    table-layout: fixed,
-}
-
-table thead tr {
-    border-bottom: 0px solid #ddd;
-}
-
-table thead th {
-    border-bottom: 1px solid #dee2e6;
-    padding: 5px;
-    text-align: left;
-    cursor: pointer;
-}
-
-
-/* table thead th:after {
-    opacity: 0.2;
-    content: "\e150";
-    font-family: 'Glyphicons Halflings';
-} */
-
-table tr {
-    border-bottom: 1px solid #ddd;
-}
-
-table tr:nth-child(even) {
-    background-color: #f2f2f2;
-}
-
-table tr td {
-    padding: 10px 5px;
-}
-
-table tr td.country {
-    width: 30%
-}
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Roboto', sans-serif;
+            font-weight: normal;
+        }
+        /* 
+         *  HEADER
+         */
+        
+        header {
+            padding: 20px;
+            margin: 0 auto;
+            max-width: 960px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-content: center;
+            align-items: center;
+        }
+        
+        header>img {
+            width: 60px;
+            height: 60px;
+        }
+        
+        header>div {
+            margin-left: 20px;
+        }
+        
+        header>div>h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 50px;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        
+        header>div>h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 20px;
+            font-weight: normal;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        /* 
+         *  BODY PAGE
+         */
+        
+        #container {
+            max-width: 960px;
+            margin: 0 auto;
+        }
+        
+        section {
+            margin: 10px 0;
+            display: flex;
+            flex-wrap: wrap;
+            justify-items: center;
+            justify-content: space-between;
+            max-width: 960px;
+        }
+        
+        section>div {
+            padding: 40px 10px;
+            margin: 10px 10px;
+            text-align: center;
+            border-radius: 6px;
+            box-shadow: 0 0 10px -4px #000;
+            flex: 1 1 250px;
+        }
+        
+        section>div:hover {
+            transform: scale(1.1);
+        }
+        
+        section>div:nth-child(1) {
+            border: 1px solid rgba(12, 47, 163, 1);
+            background-color: rgba(12, 47, 163, 0.6);
+        }
+        
+        section>div:nth-child(2) {
+            border: 1px solid rgba(165, 8, 15, 1);
+            background-color: rgba(165, 8, 15, 0.8);
+        }
+        
+        section>div:nth-child(3) {
+            border: 1px solid rgba(84, 194, 56, 1);
+            background-color: rgba(84, 194, 56, 0.9);
+        }
+        
+        section>div>img {
+            width: 48px;
+            height: 48px;
+        }
+        
+        section>div:hover img,
+        section>div:hover img,
+        section>div:hover img {
+            animation-name: slide;
+            animation-duration: 2s;
+            animation-timing-function: ease-in-out;
+            animation-iteration-count: infinite;
+        }
+        
+        @keyframes slide {
+            0% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-30px);
+            }
+            100% {
+                transform: translateY(0px);
+            }
+        }
+        
+        section>div>h1 {
+            color: #fff;
+            font-weight: 400;
+            margin-bottom: 30px;
+        }
+        
+        section>div>h3 {
+            color: #fff;
+            font-weight: 400;
+            margin: 0;
+        }
+        
+        section>div>h4 {
+            font-size: 13px;
+            font-weight: 400;
+            font-weight: normal;
+            color: #fff;
+            margin: 0;
+        }
+        
+        section>div>span {
+            font-size: 30px;
+            color: #fff;
+            display: block;
+            margin-top: 20px;
+        }
+        
+        section>div>span:nth-child(2) {
+            font-size: 30px;
+            color: #fff;
+        }
+        
+        section:nth-child(2)>div {
+            margin: 10px;
+            padding: 20px 10px;
+            text-align: center;
+            border-radius: 6px;
+            box-shadow: 0 0 10px -4px #000;
+            position: relative;
+            border: 1px solid #e48303;
+            background-color: #f57710;
+            box-shadow: 0 0 10px -4px #000;
+            flex: 1 1 250px;
+            justify-content: space-between;
+        }
+        
+        section:nth-child(2)>div:hover,
+        section:nth-child(3)>div:hover {
+            transform: none;
+        }
+        
+        section:nth-child(3) {
+            display: block;
+        }
+        
+        section:nth-child(3)>div {
+            border: 1px solid #fff;
+            background-color: #fff;
+        }
+        
+        section:nth-child(3)>div:hover img {
+            animation-name: slidex;
+            animation-duration: 2s;
+            animation-timing-function: ease-in-out;
+            animation-iteration-count: infinite;
+        }
+        /* 
+         *  FILTER | SELECT COUNTRY
+         */
+        
+        #table .filter {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 30px;
+        }
+        
+        #table .filter p {
+            margin: 15px 0 0 0;
+        }
+        /* 
+         *  TABLE RESULTS
+         */
+        
+        .table-data {
+            overflow-x: auto;
+        }
+        
+        #total p {
+            text-align: right;
+            margin: 0 5px 4px 0px;
+            font-size: 11px;
+            font-weight: bold;
+        }
+        
+        table {
+            font-size: 13px;
+            font-family: 'Montserrat', sans-serif;
+            width: 100%;
+            border-collapse: collapse;
+            table-layout: auto;
+        }
+        
+        table thead tr {
+            border-bottom: 0px solid #ddd;
+        }
+        
+        table thead th {
+            border-bottom: 1px solid #dee2e6;
+            padding: 5px;
+            text-align: center;
+            cursor: pointer;
+        }
+        
+        table tr {
+            border-bottom: 1px solid #ddd;
+        }
+        
+        table tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        
+        table tr td {
+            padding: 10px 5px;
+        }
+        
+        table tr td.country {
+            width: 30%;
+            text-align: center;
+        }

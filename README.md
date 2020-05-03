@@ -1,8 +1,8 @@
-# COVID-19 APP JS
+# COVID-19 APP
 
 App created to follow the cases about Covid-19 Pandemic and I can improve my skills about programming.
 
-### URL
+### APP COVID-19
 
 **url:** https://fennawake.github.io/covid-app-js/
 

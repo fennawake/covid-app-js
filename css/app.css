@@ -20,16 +20,16 @@
             align-items: center;
         }
         
-        header>img {
+        header img {
             width: 60px;
             height: 60px;
         }
         
-        header>div {
+        header div {
             margin-left: 20px;
         }
         
-        header>div>h1 {
+        header div h1 {
             font-family: 'Montserrat', sans-serif;
             font-size: 50px;
             text-align: center;
@@ -37,7 +37,7 @@
             padding: 0;
         }
         
-        header>div>h3 {
+        header div h3 {
             font-family: 'Montserrat', sans-serif;
             font-size: 20px;
             font-weight: normal;
@@ -63,7 +63,7 @@
             max-width: 960px;
         }
         
-        section>div {
+        section div {
             padding: 40px 10px;
             margin: 10px 10px;
             text-align: center;
@@ -72,33 +72,12 @@
             flex: 1 1 250px;
         }
         
-        section>div:hover {
-            transform: scale(1.1);
-        }
-        
-        section>div:nth-child(1) {
-            border: 1px solid rgba(12, 47, 163, 1);
-            background-color: rgba(12, 47, 163, 0.6);
-        }
-        
-        section>div:nth-child(2) {
-            border: 1px solid rgba(165, 8, 15, 1);
-            background-color: rgba(165, 8, 15, 0.8);
-        }
-        
-        section>div:nth-child(3) {
-            border: 1px solid rgba(84, 194, 56, 1);
-            background-color: rgba(84, 194, 56, 0.9);
-        }
-        
-        section>div>img {
+        section div img {
             width: 48px;
             height: 48px;
         }
         
-        section>div:hover img,
-        section>div:hover img,
-        section>div:hover img {
+        section div:hover img {
             animation-name: slide;
             animation-duration: 2s;
             animation-timing-function: ease-in-out;
@@ -117,19 +96,40 @@
             }
         }
         
-        section>div>h1 {
+        #cases {
+            border: 1px solid rgba(12, 47, 163, 1);
+            background-color: rgba(12, 47, 163, .7);
+        }
+        
+        #deaths {
+            border: 1px solid rgba(165, 8, 15, 1);
+            background-color: rgba(165, 8, 15, .9);
+        }
+        
+        #recovered {
+            border: 1px solid rgba(84, 194, 56, 1);
+            background-color: rgba(84, 194, 56, 1);
+        }
+        
+        #cases:hover,
+        #deaths:hover,
+        #recovered:hover {
+            transform: scale(1.1);
+        }
+        
+        section div h1 {
             color: #fff;
             font-weight: 400;
             margin-bottom: 30px;
         }
         
-        section>div>h3 {
+        section div h3 {
             color: #fff;
             font-weight: 400;
             margin: 0;
         }
         
-        section>div>h4 {
+        section div h4 {
             font-size: 13px;
             font-weight: 400;
             font-weight: normal;
@@ -137,65 +137,92 @@
             margin: 0;
         }
         
-        section>div>span {
+        section div span {
             font-size: 30px;
             color: #fff;
             display: block;
             margin-top: 20px;
+            margin-bottom: 5px;
         }
         
-        section>div>span:nth-child(2) {
-            font-size: 30px;
-            color: #fff;
+        #actives,
+        #critical {
+            border: 1px solid rgba(223, 103, 4, 1);
+            background-color: rgba(223, 103, 4, 1);
+            padding: 10px;
         }
         
-        section:nth-child(2)>div {
-            margin: 10px;
-            padding: 20px 10px;
-            text-align: center;
-            border-radius: 6px;
-            box-shadow: 0 0 10px -4px #000;
-            position: relative;
-            border: 1px solid #e48303;
-            background-color: #f57710;
-            box-shadow: 0 0 10px -4px #000;
-            flex: 1 1 250px;
-            justify-content: space-between;
+        .total-actives,
+        .total-critical {
+            margin-top: 0;
         }
         
-        section:nth-child(2)>div:hover,
-        section:nth-child(3)>div:hover {
-            transform: none;
+        #date {
+            padding: 10px 10px;
         }
         
-        section:nth-child(3) {
-            display: block;
-        }
-        
-        section:nth-child(3)>div {
-            border: 1px solid #fff;
-            background-color: #fff;
-        }
-        
-        section:nth-child(3)>div:hover img {
-            animation-name: slidex;
-            animation-duration: 2s;
-            animation-timing-function: ease-in-out;
-            animation-iteration-count: infinite;
+        #date span {
+            margin: 0 auto;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 17px;
+            font-weight: 600;
+            letter-spacing: 0.6px;
+            color: #4c4b4b;
         }
         /* 
          *  FILTER | SELECT COUNTRY
          */
         
-        #table .filter {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 30px;
+        #filter {
+            padding: 10px;
         }
         
-        #table .filter p {
-            margin: 15px 0 0 0;
+        #select-filter {
+            position: relative;
+            display: flex;
+            margin: 0 auto;
+            padding: 0;
+            width: 60%;
+            height: 3em;
+            line-height: 3;
+            background: #FFFFFF;
+            box-shadow: 0 1px 4px #cccccc;
+            overflow: hidden;
+            border-radius: .25em;
+        }
+        
+        #select-filter select {
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            -ms-appearance: none;
+            appearance: none;
+            outline: 0;
+            box-shadow: none;
+            border: 0 !important;
+            background: #FFFFFF;
+            background-image: none;
+        }
+        
+        #select-filter select {
+            flex: 1;
+            font-size: 1.2rem;
+            padding: 0 .5em;
+            color: #827e7e;
+            cursor: pointer
+        }
+        
+        #select-filter::after {
+            content: '\25BC';
+            position: absolute;
+            top: 0;
+            right: 0;
+            padding: 0 1em;
+            background: #f5f5f5;
+            cursor: pointer;
+            pointer-events: none;
+            -webkit-transition: .25s all ease;
+            -o-transition: .25s all ease;
+            transition: .25s all ease
         }
         /* 
          *  TABLE RESULTS
@@ -203,18 +230,32 @@
         
         .table-data {
             overflow-x: auto;
+            margin: 10px;
+            padding: 15px;
         }
         
-        #total p {
+        .table-data:hover img {
+            animation-name: slidex;
+            animation-duration: 2s;
+            animation-timing-function: ease-in-out;
+            animation-iteration-count: infinite;
+        }
+        
+        .table-data p {
             text-align: right;
-            margin: 0 5px 4px 0px;
-            font-size: 11px;
+            margin: 22px 0;
+            font-size: 13px;
             font-weight: bold;
+            background: #bbbaba;
+            padding: 8px 10px;
+            border: 1px solid #9a9a9a;
+            letter-spacing: 0.4px;
         }
         
         table {
             font-size: 13px;
             font-family: 'Montserrat', sans-serif;
+            color: #333;
             width: 100%;
             border-collapse: collapse;
             table-layout: auto;
@@ -229,6 +270,14 @@
             padding: 5px;
             text-align: center;
             cursor: pointer;
+            outline: 0;
+        }
+        
+        table th span {
+            font-size: 13px;
+            font-family: 'Montserrat', sans-serif;
+            color: #333;
+            margin-top: 0;
         }
         
         table tr {
@@ -243,7 +292,21 @@
             padding: 10px 5px;
         }
         
+        table tr td img {
+            width: 32px;
+            height: 23px;
+        }
+        
         table tr td.country {
             width: 30%;
             text-align: center;
+        }
+        
+        table div {
+            padding: 0;
+            margin: 0;
+            text-align: center;
+            border-radius: 0;
+            box-shadow: none;
+            flex: none;
         }

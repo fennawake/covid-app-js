@@ -24,47 +24,60 @@
 
     <div id="container">
 
+        <section id="filter">
+            <div id="select-filter">
+                <select name="search" id="search">
+                    <option value="0">------- All countries -------</option>
+                </select>
+            </div>
+        </section>
+
+        <section id="date">
+            <span id="dateWeek" class="dateWeek"></span>
+        </section>
 
         <section id="main-results">
             <div id="cases">
                 <img src="images/smile-scared.png">
+                <span class="total-cases"></span>
                 <h3 id="title-cases">CASES</h3>
+                <span class="total-cases-today"></span>
                 <h4 id="title-cases-today">TODAY</h4>
             </div>
             <div id="deaths">
                 <img src="images/smile-sad.png">
+                <span class="total-deaths"></span>
                 <h3 id="title-deaths">DEATHS</h3>
+                <span class="total-deaths-today"></span>
                 <h4 id="title-deaths-today">TODAY</h4>
             </div>
             <div id="recovered">
                 <img src="images/smile-recovered.png">
+                <span class="total-recovered"></span>
                 <h3 id="title-recovered">RECOVERED</h3>
             </div>
         </section>
 
         <section id="panel-aux">
             <div id="actives">
+                <span class="total-actives"></span>
                 <h3 id="title-actives">ACTIVES</h3>
             </div>
             <div id="critical">
+                <span class="total-critical"></span>
                 <h3 id="title-critical">CRITICAL</h3>
             </div>
         </section>
 
 
         <section id="table">
-            <div class="filter">
-                <form action="" id="searchCountry">
-                    <label for="search">Country:</label>
-                    <select name="search" id="search"></select>
-                </form>
-            </div>
             <div class="table-data">
+                <p class="countries-cases"></p>
                 <table id="data" class="tablesorter">
                     <thead>
-                        <th></th>
-                        <th>COUNTRY</th>
-                        <th>CASES</th>
+                        <th><span class="th-flag"></span></th>
+                        <th><span class="th-country">COUNTRY</span></th>
+                        <th data-sortinitialorder="desc">CASES</th>
                         <th>DEATHS</th>
                         <th>RECOVERED</th>
                         <th>ACTIVES</th>

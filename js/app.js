@@ -3,6 +3,7 @@
  *   [x] populate select box
  *   [x] create function to reload number's boxes after select country in the select box
  *   [x] insert atual date
+ *   [x] insert footer
  *   [ ] click on country and load a new table with new datas about determinate country
  *   [ ] insert arrow inside th
  *   [ ] fixed th after determined height

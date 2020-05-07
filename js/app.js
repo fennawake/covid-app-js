@@ -4,14 +4,24 @@
  *   [x] create function to reload number's boxes after select country in the select box
  *   [x] insert atual date
  *   [x] insert footer
+ *   [x] Adjust for fonts responsives
  *   [ ] click on country and load a new table with new datas about determinate country
  *   [ ] insert arrow inside th
  *   [ ] fixed th after determined height
  */
 
+
+
+/*
+ *  API's
+ */
+
 const API_URL_ALL = "https://corona.lmao.ninja/v2/all"
 const API_URL_COUNTRY = "https://corona.lmao.ninja/v2/countries"
 
+/*
+ *  API FETCH
+ */
 
 async function getData(url) {
     const res = await fetch(url);
@@ -22,9 +32,11 @@ async function getData(url) {
 }
 
 
-allResults(API_URL_ALL)
-
-function allResults(url) {
+/*
+ *  GET ALL RESULTS
+ *  get and format all numbers from API
+ */
+const allResults = function(url) {
     getData(url).then(data => {
 
         const cases = data.cases
@@ -60,11 +72,14 @@ function allResults(url) {
         _span_critical.innerHTML = new Intl.NumberFormat("en", { notation: "standard" }).format(critical)
     })
 }
+allResults(API_URL_ALL)
 
 
-populateFilter(API_URL_COUNTRY)
-
-function populateFilter(url) {
+/*
+ *  POPULATE FILTER
+ *  populate with countries from API
+ */
+const populateFilter = function(url) {
     getData(url).then(data => {
         const selectCountry = document.getElementById("search");
 
@@ -85,10 +100,13 @@ function populateFilter(url) {
         });
     })
 }
+populateFilter(API_URL_COUNTRY)
 
-populateTable(API_URL_COUNTRY)
-
-function populateTable(url) {
+/*
+ *  POPULATE TABLE
+ *  populate with datas from API
+ */
+const populateTable = function(url) {
     getData(url).then(data => {
 
         const countriesAffecteds = document.querySelector('.countries-cases')
@@ -117,7 +135,6 @@ function populateTable(url) {
             $("#data").tablesorter({
                 headers: {
                     '.th-flag, .th-country': {
-                        // disable it by setting the property sorter to false
                         sorter: false
                     }
                 }
@@ -125,8 +142,13 @@ function populateTable(url) {
         }
     })
 }
+populateTable(API_URL_COUNTRY)
 
-function getHours() {
+/*
+ *  GET HOURS
+ */
+
+const getHours = function() {
     let text;
     let day = new Date();
     let d = day.getDate();
@@ -157,6 +179,6 @@ function getHours() {
             text = "Sunday";
     }
 
-    dayweek.innerHTML = `${d}/${m}/${y} - ${text}`;
+    dayweek.innerHTML = `${d}/${m}/${y} | ${text}`;
 }
 getHours();

@@ -4,7 +4,7 @@ App created to follow the cases about Covid-19 Pandemic and I can improve my ski
 
 ### APP COVID-19
 
-**url:** https://fennawake.github.io/covid-app-js/
+**demo:** https://fennawake.github.io/covid-app-js/
 
 
 ### API
@@ -21,10 +21,10 @@ App created to follow the cases about Covid-19 Pandemic and I can improve my ski
   
   
  ###  TODO LIST
-  
-- [ ] Insert order icon after titles in the table
-- [ ] Fixed table head after determined height of screen
-- [ ] click on country and load a new data table with new content about this country (cases in the states, etc)
+
+- [ ] Click on country and load a new table with new datas about determinate country
+- [ ] Insert arrow inside th
+- [ ] Fixed th after determined height
 
 
 ### Keep a touch

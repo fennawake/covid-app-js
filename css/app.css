@@ -1,92 +1,80 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;500;700;900&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Barlow:400,700,800&display=swap');
+@import url('https://use.fontawesome.com/releases/v5.12.0/css/all.css');
+html {
+    font-size: 62.5%;
+    /* each 1rem = 10px */
+}
+
+body {
+    font-family: 'Barlow', sans-serif;
+    font-size: 1.6rem;
+}
+
 html,
 body {
     margin: 0;
     padding: 0;
-    font-family: 'Roboto', sans-serif;
-    font-weight: normal;
 }
 
-
-/* 
-    *  HEADER
-    */
-
 header {
-    padding: 20px;
-    margin: 0 auto;
-    max-width: 960px;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-content: center;
     align-items: center;
+    padding: 20px;
+    margin: 0 auto;
+    max-width: 960px;
 }
 
 header img {
-    width: 60px;
-    height: 60px;
+    margin-right: 20px;
 }
 
-header div {
-    margin-left: 20px;
-}
-
-header div h1 {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 50px;
-    text-align: center;
+header h3 {
     margin: 0;
     padding: 0;
-}
-
-header div h3 {
     font-family: 'Montserrat', sans-serif;
-    font-size: 20px;
+    font-size: 3rem;
     font-weight: normal;
     text-align: center;
-    margin: 0;
-    padding: 0;
 }
 
 footer {
-    font-family: 'Barlow', sans-serif;
     margin-bottom: 20px;
+    font-size: 1.5rem;
     text-align: center;
 }
 
 footer a {
-    text-decoration: none;
-    color: rgb(2, 3, 78);
     font-weight: bold;
+    color: rgb(2, 3, 78);
+    text-decoration: none;
 }
 
-
-/* 
-    *  BODY PAGE
-    */
-
 #container {
-    max-width: 960px;
     margin: 0 auto;
+    max-width: 960px;
 }
 
 section {
-    margin: 10px 0;
     display: flex;
     flex-wrap: wrap;
     justify-items: center;
     justify-content: space-between;
+    margin: 10px 0;
     max-width: 960px;
 }
 
 section div {
+    flex: 1 1 250px;
     padding: 40px 10px;
     margin: 10px 10px;
     text-align: center;
     border-radius: 6px;
     box-shadow: 0 0 10px -4px #000;
-    flex: 1 1 250px;
 }
 
 section div img {
@@ -135,38 +123,44 @@ section div:hover img {
 }
 
 section div h1 {
-    color: #fff;
-    font-weight: 400;
     margin-bottom: 30px;
+    color: #fff;
+    font-family: 'Barlow', sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
 }
 
 section div h3 {
-    color: #fff;
-    font-weight: 400;
     margin: 0;
+    color: #fff;
+    font-family: 'Barlow', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 400;
 }
 
 section div h4 {
-    font-size: 13px;
+    margin: 0;
+    color: #fff;
+    font-family: 'Barlow', sans-serif;
+    font-size: 1.2rem;
     font-weight: 400;
     font-weight: normal;
-    color: #fff;
-    margin: 0;
 }
 
 section div span {
-    font-size: 30px;
-    color: #fff;
     display: block;
     margin-top: 20px;
     margin-bottom: 5px;
+    color: #fff;
+    font-family: 'Barlow', sans-serif;
+    font-size: 2.8rem;
 }
 
 #actives,
 #critical {
+    padding: 10px;
     border: 1px solid rgba(223, 103, 4, 1);
     background-color: rgba(223, 103, 4, 1);
-    padding: 10px;
 }
 
 .total-actives,
@@ -175,16 +169,15 @@ section div span {
 }
 
 #date {
-    padding: 10px 10px;
+    padding: 2px 0;
+    margin: 0;
 }
 
 #date span {
     margin: 0 auto;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 17px;
-    font-weight: 600;
-    letter-spacing: 0.6px;
     color: #4c4b4b;
+    font-family: 'Barlow', sans-serif;
+    font-size: 1.4rem;
 }
 
 
@@ -194,20 +187,17 @@ section div span {
 
 #filter {
     padding: 10px;
+    margin: 0 auto;
 }
 
 #select-filter {
-    position: relative;
     display: flex;
-    margin: 0 auto;
-    padding: 0;
-    width: 60%;
-    height: 3em;
-    line-height: 3;
+    position: relative;
+    padding: 15px 10px;
+    overflow: hidden;
     background: #FFFFFF;
     box-shadow: 0 1px 4px #cccccc;
-    overflow: hidden;
-    border-radius: .25em;
+    border-radius: 2px;
 }
 
 #select-filter select {
@@ -224,18 +214,18 @@ section div span {
 
 #select-filter select {
     flex: 1;
-    font-size: 1.2rem;
-    padding: 0 .5em;
+    padding: 0 10px;
     color: #827e7e;
+    font-size: 1.6rem;
     cursor: pointer
 }
 
 #select-filter::after {
+    padding: 17px;
     content: '\25BC';
     position: absolute;
     top: 0;
     right: 0;
-    padding: 0 1em;
     background: #f5f5f5;
     cursor: pointer;
     pointer-events: none;
@@ -244,42 +234,39 @@ section div span {
     transition: .25s all ease
 }
 
-
-/* 
-    *  TABLE RESULTS
-    */
-
 .table-data {
-    overflow-x: auto;
     margin: 10px;
     padding: 15px;
+    overflow-x: auto;
 }
 
 .table-data:hover img {
     animation-name: slidex;
-    animation-duration: 2s;
-    animation-timing-function: ease-in-out;
-    animation-iteration-count: infinite;
 }
 
 .table-data p {
-    text-align: right;
-    margin: 22px 0;
-    font-size: 13px;
-    font-weight: bold;
-    background: #bbbaba;
     padding: 8px 10px;
-    border: 1px solid #9a9a9a;
+    margin: 0px 0px 15px 0;
+    font-size: 1.3rem;
+    background: #bbbaba;
+    text-align: right;
     letter-spacing: 0.4px;
+    border: 1px solid #9a9a9a;
 }
 
 table {
-    font-size: 13px;
-    font-family: 'Montserrat', sans-serif;
-    color: #333;
     width: 100%;
-    border-collapse: collapse;
     table-layout: auto;
+    border-collapse: collapse;
+    color: #333;
+}
+
+table div {
+    padding: 0;
+    margin: 0;
+    text-align: center;
+    border-radius: 0;
+    box-shadow: none;
 }
 
 table thead tr {
@@ -287,18 +274,12 @@ table thead tr {
 }
 
 table thead th {
-    border-bottom: 1px solid #dee2e6;
     padding: 5px;
+    outline: 0;
+    font-size: 1.2rem;
     text-align: center;
     cursor: pointer;
-    outline: 0;
-}
-
-table th span {
-    font-size: 13px;
-    font-family: 'Montserrat', sans-serif;
-    color: #333;
-    margin-top: 0;
+    border-bottom: 1px solid #dee2e6;
 }
 
 table tr {
@@ -311,6 +292,7 @@ table tr:nth-child(even) {
 
 table tr td {
     padding: 10px 5px;
+    font-size: 1.3rem;
 }
 
 table tr td img {
@@ -318,16 +300,7 @@ table tr td img {
     height: 23px;
 }
 
-table tr td.country {
+table tr th.country {
     width: 30%;
     text-align: center;
-}
-
-table div {
-    padding: 0;
-    margin: 0;
-    text-align: center;
-    border-radius: 0;
-    box-shadow: none;
-    flex: none;
 }

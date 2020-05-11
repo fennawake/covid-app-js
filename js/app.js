@@ -5,9 +5,11 @@
  *   [x] insert atual date
  *   [x] insert footer
  *   [x] Adjust for fonts responsives
+ *   [x] Mobile responsive
  *   [ ] click on country and load a new table with new datas about determinate country
  *   [ ] insert arrow inside th
  *   [ ] fixed th after determined height
+ *   [ ] Insert google analytics
  */
 
 
@@ -81,26 +83,26 @@ allResults(API_URL_ALL)
  */
 const populateFilter = function(url) {
     getData(url).then(data => {
-        const selectCountry = document.getElementById("search");
+        const selectCountry = document.getElementById("search")
 
-        data.forEach(response => {
-            const element = document.createElement("option");
+        return data.map(function(response) {
+            const element = document.createElement("option")
 
-            element.value = response.country;
-            element.textContent = response.country;
-            selectCountry.appendChild(element);
+            element.value = response.country
+            element.textContent = response.country
+            selectCountry.appendChild(element)
         })
-
-        selectCountry.addEventListener("change", event => {
-            if (event.target.value !== "0") {
-                allResults(`${API_URL_COUNTRY}/${event.target.value}`)
-            } else {
-                allResults(API_URL_ALL)
-            }
-        });
     })
 }
 populateFilter(API_URL_COUNTRY)
+
+document.getElementById("search").addEventListener("change", event => {
+    if (event.target.value !== "0") {
+        allResults(`${API_URL_COUNTRY}/${event.target.value}`)
+    } else {
+        allResults(API_URL_ALL)
+    }
+});
 
 /*
  *  POPULATE TABLE
@@ -112,34 +114,31 @@ const populateTable = function(url) {
         const countriesAffecteds = document.querySelector('.countries-cases')
         countriesAffecteds.innerHTML = data.length + " countries affecteds"
 
-        if (data.length > 0) {
+        let temp = ''
 
-            let temp = ''
+        data.forEach((response) => {
+            temp += "<tr>"
+            temp += "<td class='flag'><img src='" + response.countryInfo.flag + "' width='32px' /></td>"
+            temp += "<td class='country'>" + response.country + "</td>"
+            temp += "<td class='cases'>" + new Intl.NumberFormat("en", { notation: "standard" }).format(response.cases) + "</td>"
+            temp += "<td class='deaths'>" + new Intl.NumberFormat("en", { notation: "standard" }).format(response.deaths) + "</td>"
+            temp += "<td class='recovered'>" + new Intl.NumberFormat("en", { notation: "standard" }).format(response.recovered) + "</td>"
+            temp += "<td class='active'>" + new Intl.NumberFormat("en", { notation: "standard" }).format(response.active) + "</td>"
+            temp += "<td class='critical'>" + new Intl.NumberFormat("en", { notation: "standard" }).format(response.critical) + "</td>"
+            temp += "<td class='tests'>" + new Intl.NumberFormat("en", { notation: "standard" }).format(response.tests) + "</td>"
+            temp += "<td class='continent'>" + response.continent + "</td>"
+            temp += "</tr>"
+        })
 
-            data.forEach((response) => {
-                temp += "<tr>"
-                temp += "<td class='flag'><img src='" + response.countryInfo.flag + "' width='32px' /></td>"
-                temp += "<td class='country'>" + response.country + "</td>"
-                temp += "<td class='cases'>" + new Intl.NumberFormat("en", { notation: "standard" }).format(response.cases) + "</td>"
-                temp += "<td class='deaths'>" + new Intl.NumberFormat("en", { notation: "standard" }).format(response.deaths) + "</td>"
-                temp += "<td class='recovered'>" + new Intl.NumberFormat("en", { notation: "standard" }).format(response.recovered) + "</td>"
-                temp += "<td class='active'>" + new Intl.NumberFormat("en", { notation: "standard" }).format(response.active) + "</td>"
-                temp += "<td class='critical'>" + new Intl.NumberFormat("en", { notation: "standard" }).format(response.critical) + "</td>"
-                temp += "<td class='tests'>" + new Intl.NumberFormat("en", { notation: "standard" }).format(response.tests) + "</td>"
-                temp += "<td class='continent'>" + response.continent + "</td>"
-                temp += "</tr>"
-            })
+        document.getElementById('data-body').innerHTML = temp;
 
-            document.getElementById('data-body').innerHTML = temp;
-
-            $("#data").tablesorter({
-                headers: {
-                    '.th-flag, .th-country': {
-                        sorter: false
-                    }
+        $("#data").tablesorter({
+            headers: {
+                '.th-flag, .th-country': {
+                    sorter: false
                 }
-            });
-        }
+            }
+        });
     })
 }
 populateTable(API_URL_COUNTRY)

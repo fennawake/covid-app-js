@@ -1,0 +1,45 @@
+#filter {
+    padding: 10px;
+    margin: 0 auto;
+
+    #select-filter {
+        display: flex;
+        position: relative;
+        padding: 15px 10px;
+        overflow: hidden;
+        background: $white;
+        box-shadow: 0 1px 4px $gray-light;
+        border-radius: 2px;
+    
+        select {
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            -ms-appearance: none;
+            appearance: none;
+            outline: 0;
+            box-shadow: none;
+            border: 0 !important;
+            background: $white;
+            background-image: none;
+            flex: 1;
+            padding: 0 10px;
+            color: $gray;
+            font-size: 1.6rem;
+            cursor: pointer
+        }
+
+        &::after {
+            padding: 17px;
+            content: '\25BC';
+            position: absolute;
+            top: 0;
+            right: 0;
+            background: $gray-light;
+            cursor: pointer;
+            pointer-events: none;
+            -webkit-transition: .25s all ease;
+                 -o-transition: .25s all ease;
+                    transition: .25s all ease
+        }
+    }
+}

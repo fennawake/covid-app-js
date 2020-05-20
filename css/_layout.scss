@@ -1,0 +1,105 @@
+#container {
+    margin: 0 auto;
+    max-width: 960px;
+}
+
+section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-items: center;
+    justify-content: space-between;
+    margin: 10px 0;
+    max-width: 960px;
+
+    div {
+        flex: 1 1 250px;
+        padding: 40px 10px;
+        margin: 10px 10px;
+        text-align: center;
+        border-radius: 6px;
+        box-shadow: 0 0 10px -4px $black;
+
+        img {
+            width: 48px;
+            height: 48px;
+        }
+
+        &:hover img {
+            animation-name: slide;
+            animation-duration: 2s;
+            animation-timing-function: ease-in-out;
+            animation-iteration-count: infinite;
+        }
+
+        h1 {
+            margin-bottom: 30px;
+            color: $white;
+            font-family: $font-primary;
+            font-size: 1rem;
+            font-weight: 400;
+        }
+        
+        h3 {
+            margin: 0;
+            color: $white;
+            font-family: $font-primary;
+            font-size: 1.5rem;
+            font-weight: 400;
+        }
+        
+        h4 {
+            margin: 0;
+            color: $white;
+            font-family: $font-primary;
+            font-size: 1.2rem;
+            font-weight: 400;
+            font-weight: normal;
+        }
+        
+        span {
+            display: block;
+            margin-top: 20px;
+            margin-bottom: 5px;
+            color: $white;
+            font-family: $font-primary;
+            font-size: 2.8rem;
+        }
+    }
+}
+
+#cases {
+    @include box($blue, rgba(12, 47, 163, .7));
+}
+
+#deaths {
+    @include box($red, rgba(165, 8, 15, .9));
+}
+
+#recovered {
+    @include box($green, rgba(84, 194, 56, 1));
+}
+
+#cases:hover, #deaths:hover, #recovered:hover {
+    transform: scale(1.1);
+}
+
+#actives, #critical {
+    padding: 10px;
+    @include box($orange, rgba(223, 103, 4, 1));
+}
+
+.total-actives, .total-critical {
+    margin-top: 0;
+}
+
+#date {
+    padding: 2px 0;
+    margin: 0;
+
+    span {
+        margin: 0 auto;
+        color: $gray;
+        font-family: $font-primary;
+        font-size: 1.4rem;
+    }
+}

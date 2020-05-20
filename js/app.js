@@ -6,10 +6,11 @@
  *   [x] insert footer
  *   [x] Adjust for fonts responsives
  *   [x] Mobile responsive
+ *   [x] Insert google analytics
+ *   [ ] Transform css to saas
  *   [ ] click on country and load a new table with new datas about determinate country
  *   [ ] insert arrow inside th
  *   [ ] fixed th after determined height
- *   [ ] Insert google analytics
  */
 
 

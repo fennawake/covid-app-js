@@ -1,0 +1,72 @@
+.table-data {
+    margin: 10px;
+    padding: 15px;
+    overflow-x: auto;
+
+    &:hover img {
+        animation-name: slidex;
+    }
+
+    p {
+        padding: 8px 10px;
+        margin: 0px 0px 15px 0;
+        font-size: 1.3rem;
+        background: $gray-ultra-light;
+        text-align: right;
+        letter-spacing: 0.4px;
+        border: 1px solid $gray-light;
+    }
+
+    table {
+        width: 100%;
+        table-layout: auto;
+        border-collapse: collapse;
+        color: $gray;
+
+        div {
+            padding: 0;
+            margin: 0;
+            text-align: center;
+            border-radius: 0;
+            box-shadow: none;
+        }
+
+        tr {
+            border-bottom: 1px solid $gray-light;
+
+            &:nth-child(even) {
+                background-color: $gray-ultra-light;
+            }
+
+            th.country {
+                width: 30%;
+                text-align: center;
+            }
+
+            td {
+                padding: 10px 5px;
+                font-size: 1.3rem;
+
+                img {
+                    width: 32px;
+                    height: 23px;
+                }
+            }
+        }
+        
+        thead {
+            tr {
+                border-bottom: 0px solid $gray-ultra-light  ;
+            }
+            
+            th {
+                padding: 5px;
+                outline: 0;
+                font-size: 1.2rem;
+                text-align: center;
+                cursor: pointer;
+                border-bottom: 1px solid $gray-light;
+            }
+        }
+    }
+}

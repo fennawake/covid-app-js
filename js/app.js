@@ -11,6 +11,17 @@
  *   [ ] click on country and load a new table with new datas about determinate country
  *   [ ] insert arrow inside th
  *   [ ] fixed th after determined height
+ * 
+ *   green: rgb(101, 221, 155); - confirmed
+ *   orange: #ff9d00; - critical
+ *   red: #F65164; - Deceased
+ *   yellow: rgb(248, 245, 64); - active
+ *   blue: rgb(68, 155, 226); - recovered
+ *   roxo-escuro:  rgb(26, 26, 26); - background geral
+ *   roxo-claro: #445175; - background-boxes
+ * 
+ *   Numbers: font-size: 50px;
+ *            -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji"
  */
 
 
@@ -97,6 +108,10 @@ const populateFilter = function(url) {
 }
 populateFilter(API_URL_COUNTRY)
 
+
+/*
+ *  CLICK COUNTRY IN SELECT
+ */
 document.getElementById("search").addEventListener("change", event => {
     if (event.target.value !== "0") {
         allResults(`${API_URL_COUNTRY}/${event.target.value}`)
@@ -135,7 +150,7 @@ const populateTable = function(url) {
 
         $("#data").tablesorter({
             headers: {
-                '.th-flag, .th-country': {
+                '.th-flag': {
                     sorter: false
                 }
             }

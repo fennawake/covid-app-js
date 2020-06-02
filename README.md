@@ -22,10 +22,8 @@ App created to follow the cases about Covid-19 Pandemic and I can improve my ski
   
  ###  TODO LIST
 
-- [ ] Mobile responsive
-- [ ] Click on country and load a new table with new datas about determinate country
-- [ ] Insert arrow inside th
-- [ ] Fixed th after determined height
+TODO LIST
+[ ] click on country and load a new table with new datas about determinate country
 
 
 ### Keep a touch
